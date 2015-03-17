@@ -14,13 +14,17 @@ browser.get('http://reference.medscape.com/drug-interactionchecker')
 search = browser.find_element_by_id('MDICtextbox')
 for char in DRUG_ONE:    
     search.send_keys(char)
-time.sleep(2)
 search.send_keys(Keys.RETURN) # hit return after you enter search text
 
 search = browser.find_element_by_id('MDICtextbox')
 for char in DRUG_TWO:
     search.send_keys(char)
-time.sleep(2)
 search.send_keys(Keys.RETURN) # hit return after you enter search text
-time.sleep(5) # sleep for 5 seconds so you can see the results
-browser.quit()
+
+contraindicated = browser.find_element_by_id('contraindicated_list')
+significant = browser.find_element_by_id('significant_list')
+serious = browser.find_element_by_id('serious_list')
+minor = browser.find_element_by_id('minor_list')
+
+
+# browser.quit()
